@@ -5,8 +5,11 @@ const mongoose = require('mongoose');
 const { productroute } = require('./Routes/product.routes');
 const orderoutes = require('./Routes/orders.routes');
 const app = express()
+const cors = require('cors');
+
 
 app.use(express.json())
+app.use(cors())
 app.use("/products", productroute)
 
 app.use('/products/orders', orderoutes);
